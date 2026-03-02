@@ -52,11 +52,6 @@ class CategorySlotBlockDataProvider implements CategorySlotBlockDataProviderInte
      */
     protected static $categoryCache = null;
 
-    /**
-     * @param \Spryker\Zed\CmsSlotBlockCategoryGui\Dependency\Facade\CmsSlotBlockCategoryGuiToCategoryFacadeInterface $categoryFacade
-     * @param \Spryker\Zed\CmsSlotBlockCategoryGui\Dependency\Facade\CmsSlotBlockCategoryGuiToLocaleFacadeInterface $localeFacade
-     * @param \Spryker\Zed\CmsSlotBlockCategoryGui\Dependency\Facade\CmsSlotBlockCategoryGuiToTranslatorFacadeInterface $translatorFacade
-     */
     public function __construct(
         CmsSlotBlockCategoryGuiToCategoryFacadeInterface $categoryFacade,
         CmsSlotBlockCategoryGuiToLocaleFacadeInterface $localeFacade,
@@ -78,9 +73,6 @@ class CategorySlotBlockDataProvider implements CategorySlotBlockDataProviderInte
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getAllOptions(): array
     {
         return [
@@ -123,11 +115,6 @@ class CategorySlotBlockDataProvider implements CategorySlotBlockDataProviderInte
         return $categoryIds;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CategoryTransfer $categoryTransfer
-     *
-     * @return string
-     */
     protected function getFormattedCategoryName(CategoryTransfer $categoryTransfer): string
     {
         return sprintf(static::FORMATTED_CATEGORY_NAME, $categoryTransfer->getName(), $categoryTransfer->getCategoryKey());
